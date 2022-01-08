@@ -1,8 +1,10 @@
+from typing import Sized
 import zipfile
 import os
 from tkinter import Tk     #из tkinter импортировать Tk для Python 3.x
 from tkinter.filedialog import askopenfilename
 from tkinter import*
+import tkinter.font as font     #добавляем библиотеку для настроек шрифта
 
 def btn_click_1():
     Tk().withdraw() # нам не нужен полный графический интерфейс, поэтому не показываем корневое окно
@@ -34,10 +36,16 @@ canvas.pack()
 frame=Frame(root, bg='cornsilk')
 frame.place( relwidth=1, relheight=1)
 
+myFont = font.Font(size=24)
 
 btn = Button(frame,  text='Выбрать файл...', bg='darksalmon',border=0, command=btn_click_1)
-btn.place(relx=.5, rely=.3, anchor="c", height=100, width=150, bordermode=OUTSIDE)
+btn.place(relx=.5, rely=.3, anchor="c", height=100, width=300, bordermode=OUTSIDE)
+
+btn ['font'] = myFont
 
 btn = Button(frame, text='Разархивировать', bg='darksalmon',border=0, command=btn_click_2)
-btn.place(relx=.5, rely=.5, anchor="c", height=100, width=150, bordermode=OUTSIDE)
+btn.place(relx=.5, rely=.5, anchor="c", height=100, width=300, bordermode=OUTSIDE)
+
+btn ['font'] = myFont
+
 root.mainloop()
