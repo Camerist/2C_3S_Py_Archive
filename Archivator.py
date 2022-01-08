@@ -27,13 +27,18 @@ root = Tk()
 root['bg']='#8eacbb'
 root.title('Archivator')
 root.geometry('800x600')
+root.config(bg='black')
+
+img = PhotoImage (file = "./1.png")
+label = Label(root, image= img)
+label.place(x=0, y=0)
 
 root.resizable(width=False, height=False)
 
 canvas = Canvas(root, height=800, width=600)
 canvas.pack()
 
-frame=Frame(root, bg='cornsilk')
+frame=Frame(root, ) #bg=img
 frame.place( relwidth=1, relheight=1)
 
 myFont = font.Font(size=24)
