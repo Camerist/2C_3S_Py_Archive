@@ -24,11 +24,11 @@ def btn_click_2():
 root = Tk()
 root['bg']='#8eacbb'
 root.title('Archivator')
-root.geometry('320x240')
+root.geometry('800x600')
 
 root.resizable(width=False, height=False)
 
-canvas = Canvas(root, height=320, width=240)
+canvas = Canvas(root, height=800, width=600)
 canvas.pack()
 
 frame=Frame(root, bg='cornsilk')
