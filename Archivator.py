@@ -24,33 +24,22 @@ def btn_click_2():
 
 
 root = Tk()
-root['bg']='#8eacbb'
+root['bg']='pink'
 root.title('Archivator')
 root.geometry('800x600')
-root.config(bg='black')
-
-img = PhotoImage (file = "./1.png")
-label = Label(root, image= img)
-label.place(x=0, y=0)
 
 root.resizable(width=False, height=False)
 
-canvas = Canvas(root, height=800, width=600)
-canvas.pack()
+IMAGE_PATH = 'bg.png'
+img = PhotoImage(file = IMAGE_PATH)
+lbl = Label(root, image = img)
+lbl.img = img
+lbl.place(relx=0.5,rely=0.5, anchor='center')
 
-frame=Frame(root, ) #bg=img
-frame.place( relwidth=1, relheight=1)
-
-myFont = font.Font(size=24)
-
-btn = Button(frame,  text='Выбрать файл...', bg='darksalmon',border=0, command=btn_click_1)
+btn = Button(  text='Выбрать файл...', bg='darksalmon',border=0, command=btn_click_1)
 btn.place(relx=.5, rely=.3, anchor="c", height=100, width=300, bordermode=OUTSIDE)
 
-btn ['font'] = myFont
-
-btn = Button(frame, text='Разархивировать', bg='darksalmon',border=0, command=btn_click_2)
+btn = Button( text='Разархивировать', bg='darksalmon',border=0, command=btn_click_2)
 btn.place(relx=.5, rely=.5, anchor="c", height=100, width=300, bordermode=OUTSIDE)
-
-btn ['font'] = myFont
 
 root.mainloop()
