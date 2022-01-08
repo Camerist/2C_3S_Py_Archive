@@ -36,8 +36,8 @@ frame.place( relwidth=1, relheight=1)
 
 
 btn = Button(frame,  text='Выбрать файл...', bg='darksalmon',border=0, command=btn_click_1)
-btn.place(relx=.5, rely=.3, anchor="c", height=30, width=130, bordermode=OUTSIDE)
+btn.place(relx=.5, rely=.3, anchor="c", height=100, width=150, bordermode=OUTSIDE)
 
 btn = Button(frame, text='Разархивировать', bg='darksalmon',border=0, command=btn_click_2)
-btn.place(relx=.5, rely=.5, anchor="c", height=30, width=130, bordermode=OUTSIDE)
+btn.place(relx=.5, rely=.5, anchor="c", height=100, width=150, bordermode=OUTSIDE)
 root.mainloop()
