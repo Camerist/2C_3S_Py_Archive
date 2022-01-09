@@ -12,27 +12,27 @@ def btn_click_1():
 
     print(filename);
 
-    myzip=zipfile.ZipFile("test.zip",'w') #название файла, после архивации ( 'w' - программа понимает, что файл создаётся)
+    myzip=zipfile.ZipFile("Archiv.zip",'w') #название файла, после архивации ( 'w' - программа понимает, что файл создаётся)
     myzip.write(filename) #Файл для архивации
     myzip.close()
 
 
 def btn_click_2():
-    extract_dir = 'P' #путь для файла из архива
-    with zipfile.ZipFile('test.zip') as zf: #название архива
+    extract_dir = 'unArchiv' #путь для файла из архива
+    with zipfile.ZipFile('Archiv.zip') as zf: #название архива
         zf.extractall(extract_dir)
 
 
-root = Tk()
-root['bg']='pink'
-root.title('Archivator')
-root.geometry('800x600')
+ws = Tk()
+#root['bg']='pink'
+ws.title('Archivator')
+ws.geometry('800x600')
 
-root.resizable(width=False, height=False)
+ws.resizable(width=False, height=False)
 
 IMAGE_PATH = 'bg.png'
 img = PhotoImage(file = IMAGE_PATH)
-lbl = Label(root, image = img)
+lbl = Label(ws, image = img)
 lbl.img = img
 lbl.place(relx=0.5,rely=0.5, anchor='center')
 
@@ -48,4 +48,4 @@ btn.place(relx=.5, rely=.5, anchor="c", height=100, width=300, bordermode=OUTSID
 
 btn ['font'] = myFont
 
-root.mainloop()
+ws.mainloop()
